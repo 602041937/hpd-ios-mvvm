@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class StudentCell: UITableViewCell {
-
+    
     static let ID = "StudentCell"
     
     @IBOutlet weak var nameLB: UILabel!
@@ -29,6 +29,7 @@ class StudentCell: UITableViewCell {
         
         studentObservable.subscribe(onNext:{ [weak self] (student) in
             guard let `self` = self else { return }
+            LogUtil.log(tag: "StudentCell", message: "studentObservable")
             self.nameLB.text = "姓名:\(student.name ?? "")"
             self.infoLB.text = "年龄:\(student.age ?? 0)"
             self.booksBtn.setTitle("书本的数量:\(student.bookCount ?? 0)", for: .normal)

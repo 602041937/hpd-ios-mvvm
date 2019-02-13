@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class BooksController: BaseViewController {
-    
+
     private var vm: BooksVM!
     @IBOutlet weak var addBookBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +24,8 @@ class BooksController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TAG = "BooksController"
         
         tableView.delegate = self
         tableView.dataSource = self

@@ -10,9 +10,9 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    static let TAG = #file
+    var TAG = "BaseViewController"
     
     deinit {
-        LogUtil.log(tag: "\(self)", message: #file)
+        LogUtil.log(tag: TAG, message: "deinit")
     }
 }

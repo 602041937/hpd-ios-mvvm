@@ -27,6 +27,8 @@ class StudentController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        TAG = "StudentController"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: StudentCell.ID, bundle: nil), forCellReuseIdentifier: StudentCell.ID)
