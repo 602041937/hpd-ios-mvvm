@@ -12,6 +12,11 @@
 		EA9240E52213C2AB0016F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9240E32213C2AB0016F3D8 /* Main.storyboard */; };
 		EA9240E72213C2AC0016F3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA9240E62213C2AC0016F3D8 /* Assets.xcassets */; };
 		EA9240EA2213C2AC0016F3D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9240E82213C2AC0016F3D8 /* LaunchScreen.storyboard */; };
+		EA9240F32213C3820016F3D8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240F22213C3820016F3D8 /* LoginController.swift */; };
+		EA9240F52213C3930016F3D8 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9240F42213C3930016F3D8 /* login.storyboard */; };
+		EA9240F72213C58C0016F3D8 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240F62213C58C0016F3D8 /* LoginVM.swift */; };
+		EA9240FA2213C7470016F3D8 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240F92213C7470016F3D8 /* LogUtil.swift */; };
+		EA9240FD2213DE3D0016F3D8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240FC2213DE3D0016F3D8 /* BaseViewController.swift */; };
 		FC201FAC12055022542FBDC5 /* Pods_hpd_ios_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D480F2944BE85EC3067EBD /* Pods_hpd_ios_mvvm.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +31,11 @@
 		EA9240E62213C2AC0016F3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA9240E92213C2AC0016F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA9240EB2213C2AC0016F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9240F22213C3820016F3D8 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EA9240F42213C3930016F3D8 /* login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		EA9240F62213C58C0016F3D8 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		EA9240F92213C7470016F3D8 /* LogUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
+		EA9240FC2213DE3D0016F3D8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,10 @@
 		EA9240DE2213C2AB0016F3D8 /* hpd-ios-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				EA9240FE2213FC2F0016F3D8 /* Student */,
+				EA9240FB2213DE270016F3D8 /* Base */,
+				EA9240F82213C7300016F3D8 /* Utils */,
+				EA9240F12213C3550016F3D8 /* Login */,
 				EA9240DF2213C2AB0016F3D8 /* AppDelegate.swift */,
 				EA9240E12213C2AB0016F3D8 /* ViewController.swift */,
 				EA9240E32213C2AB0016F3D8 /* Main.storyboard */,
@@ -77,6 +91,39 @@
 				EA9240EB2213C2AC0016F3D8 /* Info.plist */,
 			);
 			path = "hpd-ios-mvvm";
+			sourceTree = "<group>";
+		};
+		EA9240F12213C3550016F3D8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EA9240F22213C3820016F3D8 /* LoginController.swift */,
+				EA9240F42213C3930016F3D8 /* login.storyboard */,
+				EA9240F62213C58C0016F3D8 /* LoginVM.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EA9240F82213C7300016F3D8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EA9240F92213C7470016F3D8 /* LogUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EA9240FB2213DE270016F3D8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EA9240FC2213DE3D0016F3D8 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EA9240FE2213FC2F0016F3D8 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Student;
 			sourceTree = "<group>";
 		};
 		EF4151D18FFF65F18B0F0C2F /* Pods */ = {
@@ -148,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9240F52213C3930016F3D8 /* login.storyboard in Resources */,
 				EA9240EA2213C2AC0016F3D8 /* LaunchScreen.storyboard in Resources */,
 				EA9240E72213C2AC0016F3D8 /* Assets.xcassets in Resources */,
 				EA9240E52213C2AB0016F3D8 /* Main.storyboard in Resources */,
@@ -214,8 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA9240F72213C58C0016F3D8 /* LoginVM.swift in Sources */,
 				EA9240E22213C2AB0016F3D8 /* ViewController.swift in Sources */,
+				EA9240FA2213C7470016F3D8 /* LogUtil.swift in Sources */,
+				EA9240F32213C3820016F3D8 /* LoginController.swift in Sources */,
 				EA9240E02213C2AB0016F3D8 /* AppDelegate.swift in Sources */,
+				EA9240FD2213DE3D0016F3D8 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
