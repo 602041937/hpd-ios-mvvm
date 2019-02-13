@@ -17,6 +17,12 @@
 		EA9240F72213C58C0016F3D8 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240F62213C58C0016F3D8 /* LoginVM.swift */; };
 		EA9240FA2213C7470016F3D8 /* LogUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240F92213C7470016F3D8 /* LogUtil.swift */; };
 		EA9240FD2213DE3D0016F3D8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240FC2213DE3D0016F3D8 /* BaseViewController.swift */; };
+		EA9241002213FC9E0016F3D8 /* student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9240FF2213FC9E0016F3D8 /* student.storyboard */; };
+		EA9241022213FD040016F3D8 /* StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9241012213FD040016F3D8 /* StudentController.swift */; };
+		EA9241042213FDAF0016F3D8 /* StudentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9241032213FDAF0016F3D8 /* StudentVM.swift */; };
+		EA924106221402800016F3D8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA924105221402800016F3D8 /* Student.swift */; };
+		EA924109221406B20016F3D8 /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA924107221406B20016F3D8 /* StudentCell.swift */; };
+		EA92410A221406B20016F3D8 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA924108221406B20016F3D8 /* StudentCell.xib */; };
 		FC201FAC12055022542FBDC5 /* Pods_hpd_ios_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D480F2944BE85EC3067EBD /* Pods_hpd_ios_mvvm.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +42,12 @@
 		EA9240F62213C58C0016F3D8 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		EA9240F92213C7470016F3D8 /* LogUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogUtil.swift; sourceTree = "<group>"; };
 		EA9240FC2213DE3D0016F3D8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EA9240FF2213FC9E0016F3D8 /* student.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = student.storyboard; sourceTree = "<group>"; };
+		EA9241012213FD040016F3D8 /* StudentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentController.swift; sourceTree = "<group>"; };
+		EA9241032213FDAF0016F3D8 /* StudentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentVM.swift; sourceTree = "<group>"; };
+		EA924105221402800016F3D8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		EA924107221406B20016F3D8 /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		EA924108221406B20016F3D8 /* StudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,12 @@
 		EA9240FE2213FC2F0016F3D8 /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				EA9240FF2213FC9E0016F3D8 /* student.storyboard */,
+				EA9241012213FD040016F3D8 /* StudentController.swift */,
+				EA9241032213FDAF0016F3D8 /* StudentVM.swift */,
+				EA924105221402800016F3D8 /* Student.swift */,
+				EA924107221406B20016F3D8 /* StudentCell.swift */,
+				EA924108221406B20016F3D8 /* StudentCell.xib */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -199,6 +217,8 @@
 				EA9240EA2213C2AC0016F3D8 /* LaunchScreen.storyboard in Resources */,
 				EA9240E72213C2AC0016F3D8 /* Assets.xcassets in Resources */,
 				EA9240E52213C2AB0016F3D8 /* Main.storyboard in Resources */,
+				EA9241002213FC9E0016F3D8 /* student.storyboard in Resources */,
+				EA92410A221406B20016F3D8 /* StudentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA9240F72213C58C0016F3D8 /* LoginVM.swift in Sources */,
+				EA9241022213FD040016F3D8 /* StudentController.swift in Sources */,
 				EA9240E22213C2AB0016F3D8 /* ViewController.swift in Sources */,
 				EA9240FA2213C7470016F3D8 /* LogUtil.swift in Sources */,
+				EA924106221402800016F3D8 /* Student.swift in Sources */,
+				EA924109221406B20016F3D8 /* StudentCell.swift in Sources */,
+				EA9241042213FDAF0016F3D8 /* StudentVM.swift in Sources */,
 				EA9240F32213C3820016F3D8 /* LoginController.swift in Sources */,
 				EA9240E02213C2AB0016F3D8 /* AppDelegate.swift in Sources */,
 				EA9240FD2213DE3D0016F3D8 /* BaseViewController.swift in Sources */,

@@ -39,7 +39,7 @@ class LoginVM {
     func login() {
         if let name = try? name.value(),let password = try? password.value() {
             if name == "123456" && password == "123456" {
-                UIApplication.shared.keyWindow?.rootViewController?.show(LoginController.newInstance(), sender: nil)
+                UIApplication.shared.keyWindow?.rootViewController?.show(StudentController.newInstance(), sender: nil)
             }
         }
     }

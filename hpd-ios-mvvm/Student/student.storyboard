@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Student Controller-->
+        <scene sceneID="gqL-nm-g6K">
+            <objects>
+                <viewController storyboardIdentifier="StudentController" id="8mp-T7-V8B" customClass="StudentController" customModule="hpd_ios_mvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0uD-hi-cMw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="be3-x1-2Nb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.72549019609999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JDK-sD-MVS"/>
+                                </constraints>
+                                <state key="normal" title="添加学生"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kHL-Tf-jAm">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="be3-x1-2Nb" firstAttribute="leading" secondItem="ZJl-ck-blp" secondAttribute="leading" id="De5-XG-uJ9"/>
+                            <constraint firstItem="ZJl-ck-blp" firstAttribute="trailing" secondItem="kHL-Tf-jAm" secondAttribute="trailing" id="Gox-it-IWo"/>
+                            <constraint firstItem="ZJl-ck-blp" firstAttribute="bottom" secondItem="kHL-Tf-jAm" secondAttribute="bottom" id="J6b-6L-3Ez"/>
+                            <constraint firstItem="ZJl-ck-blp" firstAttribute="trailing" secondItem="be3-x1-2Nb" secondAttribute="trailing" id="JgK-l2-fst"/>
+                            <constraint firstItem="kHL-Tf-jAm" firstAttribute="leading" secondItem="ZJl-ck-blp" secondAttribute="leading" id="Xt8-6j-SAu"/>
+                            <constraint firstItem="be3-x1-2Nb" firstAttribute="top" secondItem="ZJl-ck-blp" secondAttribute="top" id="hiE-9f-i0u"/>
+                            <constraint firstItem="kHL-Tf-jAm" firstAttribute="top" secondItem="be3-x1-2Nb" secondAttribute="bottom" id="p6x-dS-OAU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZJl-ck-blp"/>
+                    </view>
+                    <connections>
+                        <outlet property="addStudentBtn" destination="be3-x1-2Nb" id="I9h-Pz-O3a"/>
+                        <outlet property="tableView" destination="kHL-Tf-jAm" id="G4C-F1-yMp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gf0-yS-Dzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="-3"/>
+        </scene>
+    </scenes>
+</document>
