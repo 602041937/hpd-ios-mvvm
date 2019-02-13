@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Books Controller-->
+        <scene sceneID="2my-Ad-YX2">
+            <objects>
+                <viewController storyboardIdentifier="BooksController" id="56f-IY-XOl" customClass="BooksController" customModule="hpd_ios_mvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="77G-q0-YqG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e32-DB-A0w">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.72549019609999998" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kuU-kS-TYL"/>
+                                </constraints>
+                                <state key="normal" title="添加一本书"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PEG-I5-t6A">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PEG-I5-t6A" firstAttribute="leading" secondItem="XcY-3d-xGZ" secondAttribute="leading" id="Cqb-QY-SU9"/>
+                            <constraint firstItem="XcY-3d-xGZ" firstAttribute="bottom" secondItem="PEG-I5-t6A" secondAttribute="bottom" id="Nmu-Rd-dPS"/>
+                            <constraint firstItem="e32-DB-A0w" firstAttribute="top" secondItem="XcY-3d-xGZ" secondAttribute="top" id="Oge-RS-whJ"/>
+                            <constraint firstItem="PEG-I5-t6A" firstAttribute="top" secondItem="e32-DB-A0w" secondAttribute="bottom" id="WaM-eM-uHH"/>
+                            <constraint firstItem="XcY-3d-xGZ" firstAttribute="trailing" secondItem="e32-DB-A0w" secondAttribute="trailing" id="bRV-YR-DGB"/>
+                            <constraint firstItem="XcY-3d-xGZ" firstAttribute="trailing" secondItem="PEG-I5-t6A" secondAttribute="trailing" id="ggx-eF-tCK"/>
+                            <constraint firstItem="e32-DB-A0w" firstAttribute="leading" secondItem="XcY-3d-xGZ" secondAttribute="leading" id="wiM-Q2-y6W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XcY-3d-xGZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="addBookBtn" destination="e32-DB-A0w" id="exx-cU-JD1"/>
+                        <outlet property="tableView" destination="PEG-I5-t6A" id="Y0H-eH-Me9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUr-Ta-9iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="217"/>
+        </scene>
+    </scenes>
+</document>

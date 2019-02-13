@@ -1,5 +1,5 @@
 //
-//  Student.swift
+//  Book.swift
 //  hpd-ios-mvvm
 //
 //  Created by huangpeidong on 2019/2/13.
@@ -7,13 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class Student {
-    
-    var name: String?
-    var age: Int?
-    var bookCount: Int?
+class Book: NSObject {
 
+    var title:String?
 }

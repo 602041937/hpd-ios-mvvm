@@ -29,9 +29,9 @@ class StudentCell: UITableViewCell {
         
         studentObservable.subscribe(onNext:{ [weak self] (student) in
             guard let `self` = self else { return }
-            self.nameLB.text = student.name
-            self.infoLB.text = "\(student.age ?? 0)"
-            self.booksBtn.setTitle("\(student.bookCount ?? 0)", for: .normal)
+            self.nameLB.text = "姓名:\(student.name ?? "")"
+            self.infoLB.text = "年龄:\(student.age ?? 0)"
+            self.booksBtn.setTitle("书本的数量:\(student.bookCount ?? 0)", for: .normal)
         }).disposed(by: disposeBag)
         
         booksBtn.rx.tap.subscribe(onNext:{[weak self] in

@@ -19,7 +19,19 @@ class StudentVM {
     private var vm: StudentVM!
     
     init() {
-
+        NotificationCenter.default.rx
+            .notification(NSNotification.Name.addBook)
+            .subscribe(onNext: { [weak self] (notification) in
+                guard let `self` = self else { return }
+                if let position = notification.object as? Int {
+                    let subject = self.students[position]
+                    if let student = try? subject.value() {
+                        student.bookCount = (student.bookCount ?? 0) + 1
+                        subject.onNext(student)
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     func addStudent() {
@@ -34,7 +46,10 @@ class StudentVM {
     
     func booksCountTap(index:Int) {
         print("index=\(index)")
-        
+        let subject = students[index]
+        if let student = try? subject.value() {
+            UIApplication.shared.keyWindow?.rootViewController?.show(BooksController.newInstance(position: index,bookCount:student.bookCount ?? 0), sender: nil)
+        }
     }
     
     func cellTap(index:Int) {
