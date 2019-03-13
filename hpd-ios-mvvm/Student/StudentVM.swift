@@ -14,6 +14,7 @@ class StudentVM {
     var students: [BehaviorSubject<Student>] = []
     var count = 1
     let tableViewReloadData = PublishSubject<Void>()
+    let goBooksController = PublishSubject<(Int,Int)>()
     
     private let disposeBag = DisposeBag()
     private var vm: StudentVM!
@@ -48,7 +49,7 @@ class StudentVM {
         print("index=\(index)")
         let subject = students[index]
         if let student = try? subject.value() {
-            UIApplication.shared.keyWindow?.rootViewController?.show(BooksController.newInstance(position: index,bookCount:student.bookCount ?? 0), sender: nil)
+            goBooksController.onNext((index,student.bookCount ?? 0))
         }
     }
     

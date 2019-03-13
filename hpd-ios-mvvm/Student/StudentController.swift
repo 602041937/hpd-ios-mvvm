@@ -41,7 +41,10 @@ class StudentController: BaseViewController {
         vm.tableViewReloadData.subscribe(onNext:{ [weak self] in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
-
+        
+        vm.goBooksController.subscribe(onNext:{ (index,count) in
+            UIApplication.shared.keyWindow?.rootViewController?.show(BooksController.newInstance(position: index,bookCount:count), sender: nil)
+        }).disposed(by: disposeBag)
     }
 }
 

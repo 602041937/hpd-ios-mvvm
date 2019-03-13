@@ -59,6 +59,10 @@ class LoginController: BaseViewController {
         
         vm.loginEnable.bind(to: LoginBtn.rx.isEnabled).disposed(by: disposeBag)
         
+        vm.goStudentController.subscribe(onNext:{ () in
+            UIApplication.shared.keyWindow?.rootViewController?.show(StudentController.newInstance(), sender: nil)
+        }).disposed(by: disposeBag)
+
         LoginBtn.rx.tap.subscribe(onNext:{ [weak self] () in
             self?.vm.login()
         }).disposed(by: disposeBag)

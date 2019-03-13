@@ -17,6 +17,7 @@ class LoginVM {
     let nameWarnIsHidden: BehaviorSubject = BehaviorSubject(value: true)
     let paswordWarnIsHidden: BehaviorSubject = BehaviorSubject(value: true)
     let loginEnable: BehaviorSubject = BehaviorSubject(value: false)
+    let goStudentController: PublishSubject = PublishSubject<Void>()
     
     private let disposeBag = DisposeBag()
     
@@ -39,7 +40,7 @@ class LoginVM {
     func login() {
         if let name = try? name.value(),let password = try? password.value() {
             if name == "123456" && password == "123456" {
-                UIApplication.shared.keyWindow?.rootViewController?.show(StudentController.newInstance(), sender: nil)
+                goStudentController.onNext(())
             }
         }
     }
