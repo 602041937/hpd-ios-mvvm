@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C135F1E4FA77ADA76E4741A9 /* Pods_hpd_ios_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79B06BFDF464E07E494ECA2 /* Pods_hpd_ios_mvvm.framework */; };
+		EA411D4A223A7CAE0096F2FC /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA411D49223A7CAE0096F2FC /* PlayerController.swift */; };
+		EA411D4C223A7E620096F2FC /* PlayerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA411D4B223A7E620096F2FC /* PlayerVM.swift */; };
+		EA411D4E223A7E750096F2FC /* player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA411D4D223A7E750096F2FC /* player.storyboard */; };
 		EA9240E02213C2AB0016F3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240DF2213C2AB0016F3D8 /* AppDelegate.swift */; };
 		EA9240E22213C2AB0016F3D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9240E12213C2AB0016F3D8 /* ViewController.swift */; };
 		EA9240E52213C2AB0016F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA9240E32213C2AB0016F3D8 /* Main.storyboard */; };
@@ -29,13 +33,15 @@
 		EA92411422141B4C0016F3D8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92411222141B4C0016F3D8 /* BookCell.swift */; };
 		EA92411522141B4C0016F3D8 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA92411322141B4C0016F3D8 /* BookCell.xib */; };
 		EA92411722141C930016F3D8 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA92411622141C930016F3D8 /* Book.swift */; };
-		FC201FAC12055022542FBDC5 /* Pods_hpd_ios_mvvm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D480F2944BE85EC3067EBD /* Pods_hpd_ios_mvvm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		36D480F2944BE85EC3067EBD /* Pods_hpd_ios_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hpd_ios_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		978E508869946A5FE435E300 /* Pods-hpd-ios-mvvm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hpd-ios-mvvm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hpd-ios-mvvm/Pods-hpd-ios-mvvm.debug.xcconfig"; sourceTree = "<group>"; };
 		C4C59C0C284F98D372576EDC /* Pods-hpd-ios-mvvm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hpd-ios-mvvm.release.xcconfig"; path = "Pods/Target Support Files/Pods-hpd-ios-mvvm/Pods-hpd-ios-mvvm.release.xcconfig"; sourceTree = "<group>"; };
+		C79B06BFDF464E07E494ECA2 /* Pods_hpd_ios_mvvm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hpd_ios_mvvm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA411D49223A7CAE0096F2FC /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
+		EA411D4B223A7E620096F2FC /* PlayerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVM.swift; sourceTree = "<group>"; };
+		EA411D4D223A7E750096F2FC /* player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = player.storyboard; sourceTree = "<group>"; };
 		EA9240DC2213C2AB0016F3D8 /* hpd-ios-mvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hpd-ios-mvvm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9240DF2213C2AB0016F3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA9240E12213C2AB0016F3D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,19 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC201FAC12055022542FBDC5 /* Pods_hpd_ios_mvvm.framework in Frameworks */,
+				C135F1E4FA77ADA76E4741A9 /* Pods_hpd_ios_mvvm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		82599053E6C6A021ADD07D6F /* Frameworks */ = {
+		B09C16E195CEF2E1C8C933BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				36D480F2944BE85EC3067EBD /* Pods_hpd_ios_mvvm.framework */,
+				C79B06BFDF464E07E494ECA2 /* Pods_hpd_ios_mvvm.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA411D48223A7C7F0096F2FC /* player */ = {
+			isa = PBXGroup;
+			children = (
+				EA411D49223A7CAE0096F2FC /* PlayerController.swift */,
+				EA411D4B223A7E620096F2FC /* PlayerVM.swift */,
+				EA411D4D223A7E750096F2FC /* player.storyboard */,
+			);
+			path = player;
 			sourceTree = "<group>";
 		};
 		EA9240D32213C2AB0016F3D8 = {
@@ -88,7 +104,7 @@
 				EA9240DE2213C2AB0016F3D8 /* hpd-ios-mvvm */,
 				EA9240DD2213C2AB0016F3D8 /* Products */,
 				EF4151D18FFF65F18B0F0C2F /* Pods */,
-				82599053E6C6A021ADD07D6F /* Frameworks */,
+				B09C16E195CEF2E1C8C933BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +119,7 @@
 		EA9240DE2213C2AB0016F3D8 /* hpd-ios-mvvm */ = {
 			isa = PBXGroup;
 			children = (
+				EA411D48223A7C7F0096F2FC /* player */,
 				EA92410B2214194A0016F3D8 /* Book */,
 				EA9240FE2213FC2F0016F3D8 /* Student */,
 				EA9240FB2213DE270016F3D8 /* Base */,
@@ -239,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA411D4E223A7E750096F2FC /* player.storyboard in Resources */,
 				EA92411522141B4C0016F3D8 /* BookCell.xib in Resources */,
 				EA9240F52213C3930016F3D8 /* login.storyboard in Resources */,
 				EA92410F221419950016F3D8 /* books.storyboard in Resources */,
@@ -318,6 +336,8 @@
 				EA92411422141B4C0016F3D8 /* BookCell.swift in Sources */,
 				EA9240FA2213C7470016F3D8 /* LogUtil.swift in Sources */,
 				EA924106221402800016F3D8 /* Student.swift in Sources */,
+				EA411D4A223A7CAE0096F2FC /* PlayerController.swift in Sources */,
+				EA411D4C223A7E620096F2FC /* PlayerVM.swift in Sources */,
 				EA92410D221419820016F3D8 /* BooksController.swift in Sources */,
 				EA924109221406B20016F3D8 /* StudentCell.swift in Sources */,
 				EA9241042213FDAF0016F3D8 /* StudentVM.swift in Sources */,
