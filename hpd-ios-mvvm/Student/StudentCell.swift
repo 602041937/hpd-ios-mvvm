@@ -18,28 +18,8 @@ class StudentCell: UITableViewCell {
     @IBOutlet weak var infoLB: UILabel!
     @IBOutlet weak var booksBtn: UIButton!
     
-    private var vm: StudentVM!
-    private var disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
-    func setData(vm: StudentVM,studentObservable: BehaviorSubject<Student>,position: Int) {
-        
-        self.disposeBag = DisposeBag()
-        
-        self.vm = vm
-        
-        studentObservable.subscribe(onNext:{ [weak self] (student) in
-            guard let `self` = self else { return }
-            LogUtil.log(tag: "StudentCell", message: "studentObservable")
-            self.nameLB.text = "姓名:\(student.name ?? "")"
-            self.infoLB.text = "年龄:\(student.age ?? 0)"
-            self.booksBtn.setTitle("书本的数量:\(student.bookCount ?? 0)", for: .normal)
-        }).disposed(by: disposeBag)
-        
-        booksBtn.rx.tap.subscribe(onNext:{[weak self] in
-            self?.vm.booksCountTap(index: position)
-        }).disposed(by: disposeBag)
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

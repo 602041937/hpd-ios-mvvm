@@ -17,9 +17,9 @@ class BooksController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
     
-    static func newInstance(position:Int,bookCount:Int) -> BooksController {
+    static func newInstance(id:Int,bookCount:Int) -> BooksController {
         let vc = UIStoryboard(name: "books", bundle: nil).instantiateViewController(withIdentifier: "BooksController") as! BooksController
-        vc.vm = BooksVM(position: position,bookCount:bookCount)
+        vc.vm = BooksVM(id: id,bookCount:bookCount)
         return vc
     }
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class BooksController: BaseViewController {
             self?.vm.addBookTap()
         }).disposed(by: disposeBag)
         
-        vm.tableViewReloadDataSubject.subscribe(onNext:{ [weak self] () in
+        vm.books.subscribe(onNext:{ [weak self] (_) in
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
     }
@@ -45,13 +45,19 @@ class BooksController: BaseViewController {
 extension BooksController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.books.count
+        return vm.bookCellVMs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: BookCell.ID) as! BookCell
-        cell.setData(bookSubject: vm.books[indexPath.row])
+        
+        let bookCellVM = vm.bookCellVMs[indexPath.row]
+        
+        bookCellVM.name.subscribe(onNext:{ (text) in
+            cell.titleLB.text = text
+        }).disposed(by: cell.disposeBag)
+
         return cell
     }
 }

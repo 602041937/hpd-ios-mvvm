@@ -11,53 +11,39 @@ import RxSwift
 
 class StudentVM {
 
-    var students: [BehaviorSubject<Student>] = []
+    let students: BehaviorSubject<[Student]> = BehaviorSubject(value: [])
+    var studentCellVMs: [StudentCellVM] = []
     var count = 1
-    let tableViewReloadData = PublishSubject<Void>()
+
     let goBooksController = PublishSubject<(Int,Int)>()
     
     private let disposeBag = DisposeBag()
     private var vm: StudentVM!
     
-    init() {
-        NotificationCenter.default.rx
-            .notification(NSNotification.Name.addBook)
-            .subscribe(onNext: { [weak self] (notification) in
-                guard let `self` = self else { return }
-                if let position = notification.object as? Int {
-                    let subject = self.students[position]
-                    if let student = try? subject.value() {
-                        student.bookCount = (student.bookCount ?? 0) + 1
-                        subject.onNext(student)
-                    }
-                }
-            })
-            .disposed(by: disposeBag)
-    }
-    
     func addStudent() {
         let newStudent = Student()
+        newStudent.id = count
         newStudent.name = "dog\(count)"
         newStudent.age = count
         newStudent.bookCount = 0
-        students.append(BehaviorSubject(value: newStudent))
+        
+        var list = try! students.value()
+        list.append(newStudent)
+        
+        let studentCellVM = StudentCellVM(student: newStudent)
+        studentCellVMs.append(studentCellVM)
+    
+        students.onNext(list)
         count = count + 1
-        tableViewReloadData.onNext(())
     }
     
     func booksCountTap(index:Int) {
-        print("index=\(index)")
-        let subject = students[index]
-        if let student = try? subject.value() {
-            goBooksController.onNext((index,student.bookCount ?? 0))
+        if let list = try? students.value() {
+            let student = list[index]
+            if let id = student.id,let bookCount = student.bookCount {
+                goBooksController.onNext((id,bookCount))
+            }
         }
     }
-    
-    func cellTap(index:Int) {
-        let subject = students[index]
-        if let student = try? subject.value() {
-            student.age = (student.age ?? 0) + 1
-            subject.onNext(student)
-        }
-    }
+ 
 }

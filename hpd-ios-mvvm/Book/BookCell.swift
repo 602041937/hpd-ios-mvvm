@@ -16,15 +16,5 @@ class BookCell: UITableViewCell {
     
     @IBOutlet weak var titleLB: UILabel!
     
-    private var disposeBag = DisposeBag()
-    
-    func setData(bookSubject: BehaviorSubject<Book>) {
-        
-        disposeBag = DisposeBag()
-        
-        bookSubject.subscribe(onNext:{ [weak self] (book) in
-            self?.titleLB.text = book.title
-        }).disposed(by: disposeBag)
-        
-    }
+    var disposeBag = DisposeBag()
 }

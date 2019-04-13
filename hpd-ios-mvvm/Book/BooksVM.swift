@@ -11,20 +11,24 @@ import RxSwift
 
 class BooksVM {
     
-    var books:[BehaviorSubject<Book>] = []
-    let tableViewReloadDataSubject = PublishSubject<Void>()
+    let books:BehaviorSubject<[Book]> = BehaviorSubject(value: [])
+    var bookCellVMs: [BookCellVM] = []
 
-    var position:Int!
+    var id:Int!
     var bookCount:Int!
     
-    init(position:Int,bookCount:Int) {
-        self.position = position
+    init(id:Int,bookCount:Int) {
+        self.id = id
         self.bookCount = bookCount
         
         for i in 0..<bookCount {
             let book = Book()
             book.title = "书本\(i)"
-            self.books.append(BehaviorSubject(value: book))
+            
+            var list = try! books.value()
+            list.append(book)
+            bookCellVMs.append(BookCellVM(book: book))
+            books.onNext(list)
         }
     }
     
@@ -32,10 +36,14 @@ class BooksVM {
   
         let book = Book()
         book.title = "书本\(bookCount ?? 0)"
-        self.books.append(BehaviorSubject(value: book))
-        tableViewReloadDataSubject.onNext(())
+        
+        var list = try! books.value()
+        list.append(book)
+        bookCellVMs.append(BookCellVM(book: book))
+        books.onNext(list)
+        
         bookCount = bookCount + 1
-        NotificationCenter.default.post(name: NSNotification.Name.addBook, object: position)
+        NotificationCenter.default.post(name: NSNotification.Name.addBook, object: id)
     }
 }
 

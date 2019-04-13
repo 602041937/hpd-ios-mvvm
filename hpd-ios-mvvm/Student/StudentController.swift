@@ -38,12 +38,12 @@ class StudentController: BaseViewController {
             self?.vm.addStudent()
         }).disposed(by: disposeBag)
         
-        vm.tableViewReloadData.subscribe(onNext:{ [weak self] in
-            self?.tableView.reloadData()
+        vm.students.subscribe(onNext:{ [weak self] (_) in
+             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
-        
-        vm.goBooksController.subscribe(onNext:{ [weak self](index,count) in
-            self?.show(BooksController.newInstance(position: index,bookCount:count), sender: nil)
+
+        vm.goBooksController.subscribe(onNext:{ [weak self](id,count) in
+            self?.show(BooksController.newInstance(id: id,bookCount:count), sender: nil)
         }).disposed(by: disposeBag)
     }
 }
@@ -51,18 +51,39 @@ class StudentController: BaseViewController {
 extension StudentController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.students.count
+        return vm.studentCellVMs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: StudentCell.ID) as! StudentCell
-        cell.setData(vm: self.vm, studentObservable: vm.students[indexPath.row], position: indexPath.row)
+        
+        cell.disposeBag = DisposeBag()
+    
+        let studentCellVM = vm.studentCellVMs[indexPath.row]
+        
+        studentCellVM.name.subscribe(onNext:{ (text) in
+            cell.nameLB.text = text
+        }).disposed(by: cell.disposeBag)
+        
+        studentCellVM.age.subscribe(onNext:{ (text) in
+            cell.infoLB.text = text
+        }).disposed(by: cell.disposeBag)
+        
+        studentCellVM.booksCount.subscribe(onNext:{ (text) in
+            cell.booksBtn.setTitle(text, for: .normal)
+        }).disposed(by: cell.disposeBag)
+        
+        cell.booksBtn.rx.tap.subscribe(onNext:{[weak self] in
+            self?.vm.booksCountTap(index: indexPath.row)
+        }).disposed(by: cell.disposeBag)
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vm.cellTap(index: indexPath.row)
+        let studentCellVM = vm.studentCellVMs[indexPath.row]
+        studentCellVM.cellTap()
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
